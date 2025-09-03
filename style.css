@@ -58,7 +58,7 @@
 body {
   margin: 0; padding: 0;
   font-family: 'Pangolin', cursive;
-  background: url('../wallpaper.png') no-repeat center center fixed;
+  background: url('wallpaper.png') no-repeat center center fixed;
   background-size: cover;
   color: white;
   overflow-x: hidden; /* prevent horizontal scroll */
