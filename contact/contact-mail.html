@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mail Adresi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact-mail.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <button class="back-button" onclick="history.back()" aria-label="Geri"></button>
+
+  <div class="model-wrapper">
+    <model-viewer
+      src="bowl/ramenbowl.glb"
+      alt="Ramen Bowl"
+      auto-rotate
+      camera-controls
+      disable-zoom
+      shadow-intensity="1"
+      environment-image="neutral"
+    ></model-viewer>
+  </div>
+
+  <button class="mail-button" onclick="window.location.href='mailto:uecekuscu@gmail.com'">
+    uecekuscu@gmail.com
+  </button>
+
+</body>
+</html>

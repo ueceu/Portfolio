@@ -1,0 +1,90 @@
+body {
+  font-family: 'Pangolin', cursive;
+  background: url('../wallpaper.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px; /* Kenarlardan boşluk */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.back-button::before {
+  content: "←";
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Model container */
+.model-wrapper {
+  flex: 1; /* Yükseliği mümkün olduğunca büyüt */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px; /* Maksimum genişlik */
+  max-height: calc(100vh - 200px); /* Üst-alt boşluk bırak */
+}
+
+.model-wrapper model-viewer {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  background: transparent;
+}
+
+/* Mail butonu */
+.mail-button {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+.mail-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+  .model-wrapper {
+    max-width: 90%;
+    max-height: 50vh;
+  }
+}
