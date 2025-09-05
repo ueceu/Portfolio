@@ -160,12 +160,29 @@ function animateCats() {
   const cat = cats[currentCatIndex];
   if (!cat || cat.falling) return;
 
-  cat.posX += cat.speedX * cat.direction;
-  if (cat.posX < 0 || cat.posX > window.innerWidth - catWidth) {
-    cat.direction *= -1;
+  // Kedinin pozisyonunu güncelle
+  cat.posX += cat.speedX;
+
+  const screenWidth = window.innerWidth;
+  const catElementWidth = cat.element.offsetWidth;
+
+  // Sol sınıra çarpma
+  if (cat.posX <= 0) {
+    cat.posX = 0;
+    cat.speedX = Math.abs(cat.speedX); // her zaman pozitif yap
+    cat.element.style.transform = 'scaleX(1)'; // sağa baksın
   }
+
+  // Sağ sınıra çarpma
+  if (cat.posX >= screenWidth - catElementWidth) {
+    cat.posX = screenWidth - catElementWidth;
+    cat.speedX = -Math.abs(cat.speedX); // her zaman negatif yap
+    cat.element.style.transform = 'scaleX(-1)'; // sola baksın
+  }
+
   cat.element.style.left = `${cat.posX}px`;
 }
+
 
 function gameOver() {
   gameState = 'lost';

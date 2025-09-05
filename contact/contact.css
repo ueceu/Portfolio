@@ -67,6 +67,27 @@ nav ul.nav-right li a:hover {
   color: #fff;
 }
 
+/* Only for phone screens */
+@media (max-width: 600px) {
+  nav ul {
+    display: flex;
+    justify-content: space-evenly; /* evenly spaced items across the full width */
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li {
+    flex: 0 1 auto; /* items won't grow too much but can shrink slightly */
+    text-align: center; /* center link inside li */
+  }
+
+  nav ul.nav-right li a {
+    font-size: clamp(12px, 4vw, 14px); /* responsive font size */
+    max-width: none; /* remove max-width to allow full usage */
+    white-space: nowrap; /* prevent wrapping */
+    padding: 5px 5px; /* adjust padding for small screens */
+  }
+}
 
 
 .contact-section {
