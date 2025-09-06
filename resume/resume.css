@@ -68,6 +68,30 @@ nav ul.nav-right li a:hover {
 }
 
 
+/* Only for phone screens */
+@media (max-width: 600px) {
+  nav ul {
+    display: flex;
+    justify-content: space-evenly; /* evenly spaced items across the full width */
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li {
+    flex: 0 1 auto; /* items won't grow too much but can shrink slightly */
+    text-align: center; /* center link inside li */
+  }
+
+  nav ul.nav-right li a {
+    font-size: clamp(12px, 4vw, 14px); /* responsive font size */
+    max-width: none; /* remove max-width to allow full usage */
+    white-space: nowrap; /* prevent wrapping */
+    padding: 5px 5px; /* adjust padding for small screens */
+  }
+}
+
+
+
 .btn-pdf {
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
   color: white; /* Text color is white */
@@ -177,8 +201,9 @@ nav ul.nav-right li a:hover {
 }
 
 
+
 /* Special layout for large screens (right-left bubble arrangement) */
-@media (min-width: 876px) {
+@media (min-width: 999px) {
   /* For screens wider than 876px, alternate the order of bubbles and text containers
      to create a right-left staggered layout */
   .bubble-row.even .bubble {
@@ -201,7 +226,7 @@ nav ul.nav-right li a:hover {
 }
 
 /* Layout adjustments for smaller screens */
-@media (max-width: 875px) {
+@media (max-width: 999px) {
   /* For screens smaller or equal to 875px, stack bubbles and texts vertically 
      and center-align everything for better readability on mobile devices */
   .bubble-row {
@@ -234,79 +259,49 @@ nav ul.nav-right li a:hover {
   }
 }
 
-/* Only for phone screens */
-@media (max-width: 600px) {
-  nav ul {
-    display: flex;
-    justify-content: space-evenly; /* evenly spaced items across the full width */
-    width: 100%;
-    padding: 0;
-  }
 
-  nav ul li {
-    flex: 0 1 auto; /* items won't grow too much but can shrink slightly */
-    text-align: center; /* center link inside li */
-  }
-
-  nav ul.nav-right li a {
-    font-size: clamp(12px, 4vw, 14px); /* responsive font size */
-    max-width: none; /* remove max-width to allow full usage */
-    white-space: nowrap; /* prevent wrapping */
-    padding: 5px 5px; /* adjust padding for small screens */
-  }
-}
-
-
-/* Medium-large screen padding adjustments */
-@media (min-width: 1000px) and (max-width: 1100px) {
-  /* For screen widths between 1000px and 1100px, add side padding to avoid content
-     sticking to the edges and improve overall appearance */
-  body {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
+/* 1000px - 1300px */
+@media (min-width: 1000px) and (max-width: 1300px) {
   .bubbles-container {
+    max-width: 1000px; /* container daha küçük */
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  /* Apply similar side padding inside text containers */
   .left-text-container,
   .right-text-container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-/* Large screen padding increase */
-@media (min-width: 1100px) {
-  /* For screens wider than 1100px, increase side paddings to give more breathing space */
-  body {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
   }
 
-  .bubbles-container {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
-
-/* Extra large screens bubble size adjustment */
-@media (min-width: 1300px) {
-  /* For very large screens (1300px+), increase bubble sizes for better visual impact */
   .bubble {
-    width: 600px;
-    height: 400px;
-    max-width: none;
-  }
-
-  .bubble.left,
-  .bubble.right {
-    width: 60%; /* Relative width for left and right aligned bubbles */
-    max-width: 600px;
+    width: 100%;
+    max-width: 500px; /* bu aralıkta bubble daha küçük */
   }
 }
 
+/* 1300px ve sonrası */
+@media (min-width: 1300px) {
+  .bubbles-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
+  .left-text-container,
+  .right-text-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .bubble {
+    width: 100%;
+    max-width: 600px; /* büyük ekranlarda bubble daha büyük */
+  }
+}
